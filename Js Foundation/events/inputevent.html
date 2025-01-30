@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <section>
+    <div>
+        <input type="text" placeholder="enter something" id="myinput " autocomplete="off">
+    <div class="output">
+
+        <p class="inputValue">input Value : </p>
+        <p class="inputName">input Name: </p>
+        <p class="inputType">input Type : </p>
+        <p class="eventType">Event type : </p>
+
+
+        <script>
+            let inputdiv =document.getElementById('myinput');
+            // console.log(inputdiv.value);
+            const handleinput=(event)=>{
+                console.log(event);
+
+                // document.querySelector('.keypressed').textContent= `Key Pressed : ${event.key}`;
+                // document.querySelector('.keycode').textContent= `Key code : ${event.code}`;
+                // document.querySelector('.charcode').textContent= `Char code : ${event.key.charCodeAt(0)}`;
+                // document.querySelector('.eventtype').textContent= `Event type : ${event.type}`;
+
+           
+                
+
+            }
+
+
+            inputdiv.addEventListener('input',(event)=>{handleinput(event)});
+
+            // inputdiv.addEventListener('keydown',keyboardEvent1);
+            
+        </script>
+
+    </div>
+    </div>
+   </section>
+</body>
+</html>

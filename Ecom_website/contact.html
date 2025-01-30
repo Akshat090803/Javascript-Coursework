@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Akshat Store Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- header -->
+    <header class="section-navbar">
+      <section class="top_text">
+        <div class="head container">
+          <div class="head_text">
+            <p>Free shipping, 30-day return or refund guarantee.</p>
+          </div>
+          <div class="sign_in_up">
+            <a href="#">SIGN IN</a>
+            <a href="#">SIGN UP</a>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="navbar-brand">
+          <a href="index.html">
+            <img src="./images/navLogo2.png" 
+                 alt="brand logo"
+                 class="logo"
+                 width="80%"
+                 height="auto"
+            >
+          </a>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">about</a>
+            </li>
+            <li class="nav-item">
+              <a href="products.html" class="nav-link">products</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">contact</a>
+            </li>
+            <li class="nav-item">
+              <a href="addToCart.html" class="nav-link add-to-cart-button" id="cartValue">
+                <i class="fa-solid fa-cart-shopping" id="itemsInCart"> 0 </i>
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+      </div>
+    </header>
+
+    <!-- !contact page -->
+   
+    <section class="section-contact">
+        <div class="container">
+          <h2 class="section-common--heading">contact us</h2>
+          <p class="section-common--subheading">
+            Get in touch with us. We are always here to help you.
+          </p>
+        </div>
+  
+        <div class="container grid grid-two--cols">
+          <div class="contact-content">
+            <form action="https://formspree.io/f/meqypdab"
+            method="post">
+              <div class="grid grid-two-cols mb-3">
+                <div>
+                  <label for="username">full name</label>
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    required
+                    autocomplete="off"
+                    placeholder="enter full name"
+                  />
+                </div>
+  
+                <div>
+                  <label  for="email">email address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    autocomplete="off"
+                    placeholder="abc@gmail.com"
+                    class="lowercase-placeholder"
+                  />
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="subject">subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  required
+                  autocomplete="off"
+                  placeholder="title of your message"
+                />
+              </div>
+  
+              <div class="mb-3">
+                <label for="message">message</label>
+                <textarea
+                  name="message"
+                  id="message "
+                  cols="30"
+                  rows="10"
+                  placeholder="we are always here to help you."
+                ></textarea>
+              </div>
+  
+              <div class="mt-3">
+                <button type="submit" class="btn contact-btn">
+                  send message
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14447.327803733955!2d75.79422174496172!3d25.14137169394715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396f835f077c3ccb%3A0x4bb166c16c662eea!2sRajasthan%20Technical%20University%2C%20Akelgarh%2C%20Kota%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1713089039375!5m2!1sen!2sin" 
+            width="100%" height="auto" 
+            style="border:0;" 
+            allowfullscreen=""
+             loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      
+
+     <!-- ========== Start footer Section ========== -->
+     <footer class="section-footer">
+      <div class="footer-container container">
+        <div class="content_1">
+          <img src="./images/footerfinallogo2.png" alt="logo" />
+          <p>
+            Welcome to Akshat EcomStore, your ultimate destination for
+            cutting-edge gadgets!
+          </p>
+          <img src="https://i.postimg.cc/Nj9dgJ98/cards.png" alt="cards" />
+         
+        </div>
+        <div class="content_2">
+          <h4>SHOPPING</h4>
+          <a href="#">Computer Store</a>
+          <a href="#">Laptop Store</a>
+          <a href="#">Accessories</a>
+          <a href="#">Sales & Discount</a>
+        </div>
+        <div class="content_3">
+          <h4>Experience</h4>
+          <a href="./contact.html">Contact Us</a>
+          <a href="" target="_blank">Payment Method</a>
+          <a href="" target="_blank">Delivery</a>
+          <a href="" target="_blank">Return and Exchange</a>
+        </div>
+        <div class="content_4">
+          <h4>NEWSLETTER</h4>
+          <p>Be the first to know about new<br />arrivals, sales & promos!</p>
+          <form class="f-mail">
+            <input type="email" placeholder="Your Email" />
+            <!-- <i class="bx bx-envelope"></i> -->
+            <!-- <i class="fa-solid fa-mailbox"></i> -->
+            <i class="fa-regular fa-paper-plane"></i>
+          </form>
+          <hr />
+        </div>
+      </div>
+      <div class="f-design">
+        <div class="f-design-txt">
+          <p>Design and Code by Akshat</p>
+        </div>
+        <div class="social-footer--icons">
+          <a href="https://www.instagram.com/with_akshat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@with_akshat" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="www.linkedin.com/in/withakshat" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      </div>
+    </footer>
+
+    <!-- ========== End footer Section ========== -->
+
+
+    <!-- <script src="main.js"> </script> -->
+    <script type="module" src="main.js"></script>
+    
+</body>
+</html>

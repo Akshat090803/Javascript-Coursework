@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="inline">
+        <h1>Inline Events</h1>
+    <button onclick="alert('hello from akshat')">Greetings</button>
+
+    <button ondblclick="alert('hiiiiiiii')">Greetings again</button>
+    <button onmouseover="alert('hiiiiiiii')">Greetings again</button>
+    </div>
+
+    <div class="dom">
+        <h1>Inline Events</h1>
+    <button id="btn1">Greetings</button>
+
+    <button id="btn2">Greetings again</button>
+    <button id="btn3">Greetings again</button>
+    </div>
+
+    <div class="addeventlistener">
+        <h1>Inline Events</h1>
+    <button id="btn4">Greetings</button>
+
+    <button id="btn5">Greetings again</button>
+    <button id="btn6">Greetings again</button>
+    </div>
+    
+    <script>
+
+        // dom event handler
+  document.getElementById('btn1').onclick= function (){
+    alert('Hello form domevent');
+  };
+  document.getElementById('btn2').ondblclick= function (){
+    alert('Hello form domevent');
+  };
+  
+  document.getElementById('btn3').onmouseover= function (){
+    alert('Hello form domevent');
+  };
+  
+  document.getElementById('btn2').ondblclick= function (){
+    alert('Hello form domevent');
+  };
+
+// addEventListener
+
+document.getElementById('btn4').addEventListener('click' , ()=>{
+    alert('addeventlistener')
+});
+document.getElementById('btn5').addEventListener('dblclick' , ()=>{
+    alert('addeventlistener')
+});
+document.getElementById('btn6').addEventListener('mouseover' , ()=>{
+    alert('addeventlistener')
+});
+    </script>
+    
+</body>
+</html>

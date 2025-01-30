@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <section>
+    <div>
+        <input type="text" placeholder="enter something" id="input">
+    <div class="output">
+
+        <p class="keypressed">Key Pressed : </p>
+        <p class="keycode">key Code : </p>
+        <p class="charcode">Char code : </p>
+        <p class="eventtype">Event type : </p>
+
+
+        <script>
+            let inputdiv =document.getElementById('input');
+            // console.log(inputdiv.value);
+            const keyboardEvent1=(event)=>{
+                console.log(event);
+
+                document.querySelector('.keypressed').textContent= `Key Pressed : ${event.key}`;
+                document.querySelector('.keycode').textContent= `Key code : ${event.code}`;
+                document.querySelector('.charcode').textContent= `Char code : ${event.key.charCodeAt(0)}`;
+                document.querySelector('.eventtype').textContent= `Event type : ${event.type}`;
+
+           
+                
+
+            }
+
+
+            inputdiv.addEventListener('keydown',(event)=>{
+                keyboardEvent1(event);
+            });
+
+            // inputdiv.addEventListener('keydown',keyboardEvent1);
+            
+        </script>
+
+    </div>
+    </div>
+   </section>
+</body>
+</html>

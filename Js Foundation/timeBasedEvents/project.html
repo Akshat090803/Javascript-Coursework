@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <p id="countDown">0</p>
+      <div class="buttons">
+        <button class="start_btn">Start</button>
+        <button class="reset_btn">Reset</button>
+        <button class="stop_btn">Stop</button>
+        <button class="getTime_btn">getTime</button>
+        <button class="clear_btn">clearTime</button>
+      </div>
+      <div class="resetvalue"></div>
+      
+    </section>
+
+
+    <script>
+      const count=document.getElementById("countDown");
+      const resetDiv=document.querySelector(".resetvalue")
+      const start_b=document.querySelector(".start_btn");
+      const reset_b=document.querySelector(".reset_btn");
+      const stop_b=document.querySelector(".stop_btn");
+      const getTime_b=document.querySelector(".getTime_btn");
+      const clear_b=document.querySelector(".clear_btn");
+
+      let countStart=0;
+      let intervalID; 
+      //we declare timeInterval in global scope so that we can call it in stopTimer function 
+      // as well as along with startTimer dunction
+
+// !start Timer function
+      const startTimer=()=>{
+        count.innerText= countStart++;
+       
+        intervalID=setInterval(()=>{ count.innerText= countStart++;},1000);
+      }
+  // Stop timer function
+  const stopTimer=()=>{
+        clearInterval(intervalID);
+  };
+  // reset timer function define
+  const resetTimer=()=>{
+    countStart=0;
+    
+    clearInterval(intervalID);
+    count.innerText= countStart;
+
+  }
+
+  // getTime function define;
+  const getTime=()=>{
+    const newpara=document.createElement("p");
+    if(countStart!=0){
+      newpara.innerText=`The stop time is ${countStart-1}`;
+    }
+    else{
+      newpara.innerText=`The stop time is 0`;
+
+    }
+    resetDiv.append(newpara);
+  };
+
+  // clear time function define
+  const clearTime=()=>{
+    resetDiv.innerHTML="";
+  }
+  
+
+  // ---------------Event listeners-------------------------
+
+// start button event listener
+      start_b.addEventListener("click",()=>{
+        startTimer();
+      });
+
+// stop button event listener
+
+      stop_b.addEventListener("click",stopTimer);
+// reset button event listener
+      reset_b.addEventListener("click",()=>{
+        resetTimer();
+      });
+  // get time button event listener
+      getTime_b.addEventListener("click",()=>{
+        getTime();
+      });
+
+  //  clear time event listener
+  clear_b.addEventListener("click",()=>{
+    clearTime();
+  })
+    </script>
+  </body>
+</html>

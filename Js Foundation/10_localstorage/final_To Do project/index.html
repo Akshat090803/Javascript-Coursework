@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form >
+        <h1>To Do List</h1>
+        <div id="input">
+            <input type="text" name="data" id="data">
+            <button id="btn1">Add</button>
+        </div>
+        <section class="todolist"></section>
+       
+    </form>
+    
+    <script>
+        let mybtn=document.getElementById('btn1');
+        let inputdiv=document.getElementById('data');
+        let tododiv=document.querySelector('.todolist');
+        
+
+        const getToDoListFromLocal=()=>{
+           return JSON.parse(localStorage.getItem('youtubetodolist'));
+        }
+        // initisalising the array
+       let todovalues = getToDoListFromLocal() || [];
+
+        const addToDoDynamicElement=(currEle)=>{
+            let createtododiv=document.createElement('div');
+            createtododiv.classList.add('my-to-do-div')
+            createtododiv.innerHTML=`<li>${currEle}</li><button class="deletebtn">Delete</button>`
+            tododiv.append(createtododiv);
+
+        };
+
+        const todoadd=(e)=>{
+           if(inputdiv.value!="" && !todovalues.includes(inputdiv.value)){
+            e.preventDefault(); //preventing form sumbmission
+            let createtododiv=document.createElement('div');
+            createtododiv.classList.add('my-to-do-div')
+            createtododiv.innerHTML=` <li>${inputdiv.value}</li><button class="deletebtn">Delete</button>`
+            tododiv.append(createtododiv);
+            // or
+            // addToDoDynamicElement(inputdiv.value)
+            // adding values in array
+             
+
+            
+            todovalues.push(inputdiv.value.trim())
+            // removing duplicates
+            todovalues=[...new Set(todovalues)];
+            // adding data to localstorage
+            localStorage.setItem('youtubetodolist',JSON.stringify(todovalues));
+            console.log(todovalues);
+            inputdiv.value="";
+           }
+           else if(inputdiv.value==""){
+            alert(`${inputdiv.value} Please enter some text`)
+           }
+           else{
+            alert(`${inputdiv.value} already exist`)
+           }
+
+
+        };
+
+//      deleteeing to do list element
+        const deletetodo=(e)=>{
+
+           
+
+            // console.log(e.target);
+            let tododelete=e.target;
+            console.log(tododelete);
+            let tododeletecontent= tododelete.previousElementSibling.innerText;
+            let parentEle=tododelete.parentElement;
+            console.log(parentEle);
+            // console.log(tododeletecontent);
+
+           
+//       returning elements to array which are not equal to content which needs to delete
+// means updating arrray with values except the value which needs to be deleted 
+// we can use localstorage.remove()m as it will remove whole array thats why we are removing the element firm the array
+            todovalues=todovalues.filter((ele)=>{
+                return ele!=tododeletecontent.toLowerCase();
+            });
+
+            // **********imppppportantttttttttttt**********************************
+            // ??? Instead of usinng for filter loop as shown above we can get index of the item to be deleted usig 
+            // arrray.indexof() and using splice method we can remove that item from array
+           
+            // let delete_index=todovalues.indexOf(tododeletecontent.toLowerCase());
+            // console.log(`index====${todovalues.indexOf(tododeletecontent.toLowerCase())}`);
+            // todovalues.splice(delete_index,1);
+
+            // updating data in local storgae afyer deletion
+            localStorage.setItem('youtubetodolist',JSON.stringify(todovalues));
+
+            // removing from htmlpage
+            parentEle.remove();
+            console.log(todovalues);
+           
+
+
+        };
+
+       
+//    showing todolist from local storage
+        const showtodolist=()=>{
+            console.log(todovalues);
+            todovalues.forEach((currEle) => {
+                addToDoDynamicElement(currEle);
+                
+            });
+        };
+        showtodolist();
+        
+         // !! Event Listeners
+
+        mybtn.addEventListener('click',(e)=>{
+            todoadd(e);
+        });
+
+        tododiv.addEventListener('click',(e)=>{
+            e.preventDefault();
+
+            // appliyng condition if it contains class deletbtn than only fire event else not
+            if(e.target.classList.contains("deletebtn")){
+            deletetodo(e);
+            }
+
+        });
+    </script>
+</body>
+</html>

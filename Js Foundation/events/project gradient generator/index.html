@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div>
+            <button id="btn1">#51e8c7</button>
+            <button id="btn2">#a07cf9</button>
+        </div>
+        <h2>Copy your code here</h2>
+        <div class="copycode">
+            background-image: linear-gradient(to right, #51e8c7 , #a07cf9);
+        </div>
+
+    </section>
+
+    <script>
+        let mybtn1=document.getElementById('btn1');
+        let mybtn2=document.getElementById('btn2');
+        let code=document.querySelector('.copycode');
+        let rgb1='#51e8c7';
+        let rgb2='#a07cf9';
+
+        const hexCodeGenerator=()=>{
+            let value="0123456789abcdef";
+            let hexCode="#";
+
+            for(let i=0;i<6;i++){
+                hexCode+=value[Math.floor(Math.random()*16)];
+            }
+           return hexCode;
+        }
+
+
+        // mybtn1.addEventListener('click',()=>{
+
+        //       rgb1=hexCodeGenerator();
+        //       mybtn1.textContent= rgb1;
+        //       code.textContent=`background-image: linear-gradient(to right, ${rgb1} , ${rgb2});`
+        //     //   document.body.style.background-image=`linear-gradient(to right, ${rgb1} , ${rgb2})`;
+
+
+        // });
+          mybtn1.addEventListener('click',()=>{
+
+              rgb1=hexCodeGenerator();
+              mybtn1.textContent= rgb1;
+              code.textContent=`background-image: linear-gradient(to right, ${rgb1} , ${rgb2});`;
+              document.body.style.backgroundImage=`linear-gradient(to right, ${rgb1} , ${rgb2})`;
+              
+
+
+        });
+
+        mybtn2.addEventListener('click',()=>{
+
+             rgb2=hexCodeGenerator();
+             mybtn2.textContent= rgb2;
+             code.textContent=`background-image: linear-gradient(to right, ${rgb1} , ${rgb2});`
+            document.body.style.backgroundImage=`linear-gradient(to right, ${rgb1} , ${rgb2})`;
+
+
+        });
+
+        code.addEventListener('click',()=>{
+            navigator.clipboard.writeText(code.innerText);
+            alert('Your code is copied to clipboard');
+        })
+
+
+    </script>
+</body>
+</html>

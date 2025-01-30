@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+        
+       }
+       h1{
+        color: aqua;
+        font-weight: bold;
+        /* font-family: "Urbanist", sans-serif; */
+       
+       }
+       .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+      }
+
+       button{
+        padding: 0.6rem 2.4rem;
+        border-radius: 10rem;
+        margin-right: 3.6rem;
+        margin-top: 4.8rem;
+        cursor: pointer;
+        transition: all 0.01s linear;
+        border: 0;
+
+        &:hover{
+            border: 2px solid white ;
+           
+            
+        }
+        
+       }
+
+       #btn1{
+        background-color: darkorchid;
+        color: aliceblue;
+       }
+       #btn2{
+        background-color: rgb(16, 16, 230);
+        color: aliceblue;
+       }
+       #btn3{
+        background-color: rgb(44, 193, 239);
+       }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Local-storage</h1>
+    <div>
+        <button id="btn1">Add item to local-storage</button>
+        <button id="btn2">Get item from local-storage</button>
+        <button id="btn3">Delete item form local-storage</button>
+    </div>
+    </div>
+    <script>
+        let mybtn1=document.getElementById('btn1');
+        let mybtn2=document.getElementById('btn2');
+        let mybtn3=document.getElementById('btn3');
+        const values={
+            Firstname:"akshat",
+            Lastname:"jain",
+            age:18,
+            course:['C++','HTML','CSS','JS'],
+            address:{
+                houseNo:48,
+                Area:"Chhawani",
+                PinCode:324007
+            },
+        };
+
+        const addToLocalStorage=()=>{
+            localStorage.setItem('data',JSON.stringify(values));
+
+        }
+
+        const getFromLocalStorage=()=>{
+           const retreivedData=JSON.parse(localStorage.getItem("data"));
+           console.log("Retrived Data = ",retreivedData);
+        }
+
+        const deleteFromLocalStorage=()=>{
+            localStorage.removeItem("data");
+            alert("Your data is removed");
+        }
+
+        mybtn1.addEventListener('click',()=>{
+            addToLocalStorage();
+        });
+        mybtn2.addEventListener('click',()=>{
+            getFromLocalStorage();
+        });
+        mybtn3.addEventListener('click',()=>{
+            deleteFromLocalStorage();
+        });
+    </script>
+</body>
+</html>

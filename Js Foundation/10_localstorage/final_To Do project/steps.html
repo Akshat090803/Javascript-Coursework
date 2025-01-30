@@ -1,0 +1,35 @@
+<!-- ! step 1 -->
+<!-- ?first create an structure using html and style it -->
+<!-- add class todolist to it -->
+
+<!-- ! step 2 -->
+<!-- Setting up the javascript -->
+<!-- ?select the neccesarry dom elements and store its refferences -->
+
+<!-- !step 3 (add click event) -->
+<!-- ?add a click event listener to ADD button "id=btn1" -->
+<!-- in a event listener call a function named todoadd(e) -->
+
+<!-- ! step 4 (define todoadd(e) function) -->
+-In todoadd func prevent default form submission by e.preventDefault();
+-create a new element(div) in todolist  and add class my-to-do-list in it
+-write in new element created using inner.html ()  
+  createtododiv.innerHTML=` <li>${inputdiv.value}</li><button class="deletebtn">Delete</button>`
+
+-append createtododiv in tododiv whuch is refference to  todolist;
+tododiv.append(createtododiv);
+
+-store inputdiv data into array named todovalues and update it in local-storage using setItem
+
+<!-- !step-5 (Get to do from localstorage)-->
+-create a function (eg : getToDoListFromLocal) to retreive todo data from local storage using "localstorage.getitem"
+-use 'json.parse' to convert the stored string into array
+
+<!-- ! step 6 Show to do -->
+-create a function named showtodolist() to display todo on page load
+-retrive  todo data from local storage using 'getToDoListFromLocal'=
+-iterate through the array and dynamically add todos to the contianer
+
+<!--! step 7  add click event to tododiv  -->
+
+
