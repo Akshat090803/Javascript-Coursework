@@ -2,6 +2,7 @@
 
 // to get the date and time
 
+require("dotenv").config();
 
 // !taking reffrences
 let search=document.querySelector('.city_name');
@@ -22,6 +23,9 @@ let container=document.querySelector('.container')
 
 
 
+
+const API_TOKEN=process.env.TOKEN;
+// console.log(API_TOKEN)
 
 // !to get the actual country name
 const getCountryName=(code)=>{
@@ -100,7 +104,7 @@ const changeBg=(forecast)=>{
 let city="kota";
 
 const getWeatherData = async () => {
-  const weatherUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5cea3c302d377c3e0b4ae23cea3f0de3`;
+  const weatherUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&${API_TOKEN}`;
 
   try{
     const res=await fetch(weatherUrl);
